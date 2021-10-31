@@ -11,29 +11,6 @@ import ToolBarHead from '../ToolBarItems/ToolBarHead/ToolBarHead'
 import ToolBarSearch from "../ToolBarItems/ToolBarSearch/ToolBarSearch";
 
 export default function TopBarMenu() {
-    const [anchorEl, setAnchorEl] = React.useState(null); // Какой-то анчор хз че это.
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null); // Какой-то анчор хз че это.
-
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-    const handleProfileMenuOpen = (event) => {
-        setAnchorEl(event.currentTarget);
-        console.log('event', event)
-    }; // Функция открытия профиля.
-
-    const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
-    }; // Закрывает, но надо подключать чето.
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    }; // Закрывает, но надо подключать чето.
-
-    const handleMobileMenuOpen = (event) => {
-        setMobileMoreAnchorEl(event.currentTarget);
-    }; // Открывает на мобилке.
 
     const menuId = 'primary-search-account-menu';
     const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -47,7 +24,6 @@ export default function TopBarMenu() {
                     <ToolBarSearch/>
                     <Box sx={{ flexGrow: 1 }} />
                     <ToolBarIcons
-                        handleProfileMenuOpen={handleProfileMenuOpen}
                         menuId={menuId}
                     />
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -56,7 +32,6 @@ export default function TopBarMenu() {
                             aria-label="show more"
                             aria-controls={mobileMenuId}
                             aria-haspopup="true"
-                            onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
                             <MoreIcon />
@@ -67,4 +42,3 @@ export default function TopBarMenu() {
         </Box>
     );
 }
-

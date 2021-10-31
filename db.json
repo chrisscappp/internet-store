@@ -1,0 +1,154 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "New Balance",
+      "author": "Игорь Катамаранов",
+      "description": "Кроссы огонь!",
+      "comments": [
+        {
+          "id": 1,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Кроссы хорошие! Думаю возьму себе!"
+        },
+        {
+          "id": 2,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Да!"
+        },
+        {
+          "id": 3,
+          "user_name": "Тут будет проп с именем",
+          "comment": ")"
+        }
+      ],
+      "price": 5000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 2,
+      "title": "Nike",
+      "author": "VasyaBarnaul_2010",
+      "description": "Кроссы огонь!",
+      "comments": [
+        {
+          "id": 1,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Кроссы хорошие! Думаю возьму себе!"
+        },
+        {
+          "id": 2,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Да!"
+        },
+        {
+          "id": 3,
+          "user_name": "Тут будет проп с именем",
+          "comment": ")"
+        }
+      ],
+      "price": 4000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 3,
+      "title": "Fila",
+      "author": "Артемий Татьяныч",
+      "description": "Тёма я твой фанат!",
+      "comments": [
+        {
+          "id": 1,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Кроссы хорошие! Думаю возьму себе!"
+        },
+        {
+          "id": 2,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Да!"
+        },
+        {
+          "id": 3,
+          "user_name": "Тут будет проп с именем",
+          "comment": ")"
+        }
+      ],
+      "price": 1000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 4,
+      "title": "Adidas",
+      "author": "Александр Шаненков",
+      "description": "Кроссы огонь!",
+      "comments": [
+        {
+          "id": 1,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Кроссы хорошие! Думаю возьму себе!"
+        },
+        {
+          "id": 2,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Да!"
+        },
+        {
+          "id": 3,
+          "user_name": "Тут будет проп с именем",
+          "comment": ")"
+        }
+      ],
+      "price": 99000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 5,
+      "title": "Vans",
+      "author": "Илья Бруев",
+      "description": "Кроссы огонь!",
+      "comments": [
+        {
+          "id": 1,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Кроссы хорошие! Думаю возьму себе!"
+        },
+        {
+          "id": 2,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Да!"
+        },
+        {
+          "id": 3,
+          "user_name": "Тут будет проп с именем",
+          "comment": ")"
+        }
+      ],
+      "price": 7000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 6,
+      "title": "Asics",
+      "author": "Фёдоров Александр",
+      "description": "Кроссы огонь!",
+      "comments": [
+        {
+          "id": 1,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Кроссы хорошие! Думаю возьму себе!"
+        },
+        {
+          "id": 2,
+          "user_name": "Тут будет проп с именем",
+          "comment": "Да!"
+        },
+        {
+          "id": 3,
+          "user_name": "Тут будет проп с именем",
+          "comment": ")"
+        }
+      ],
+      "price": 8000,
+      "image": "../../access/images/ProductCard/product.png"
+    }
+  ]
+}

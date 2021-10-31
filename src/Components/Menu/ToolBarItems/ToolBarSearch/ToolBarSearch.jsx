@@ -1,8 +1,6 @@
 import React from 'react'
 import {Search as SearchIcon} from "@material-ui/icons";
-import Search from './consts/search'
-import SearchIconWrapper from './consts/searchIconWrapper'
-import StyledInputBase from './consts/styledInputBase'
+import {Search, SearchIconWrapper, StyledInputBase} from './consts/search'
 
 const ToolBarSearch = () => {
     return (
@@ -12,7 +10,7 @@ const ToolBarSearch = () => {
                     <SearchIcon />
                 </SearchIconWrapper>
                 <StyledInputBase
-                    placeholder="Search…"
+                    placeholder="Поиск товара..."
                     inputProps={{ 'aria-label': 'search' }}
                 />
             </Search>

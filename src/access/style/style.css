@@ -1,0 +1,8 @@
+.accordion-header {
+    display: flex;
+    align-items: center;
+}
+
+.products_container{
+    display: none;
+}
