@@ -12,10 +12,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import CommentIcon from '@mui/icons-material/Comment';
 import Menu from "@material-ui/core/Menu";
 import {ProductComments} from "./ProductComments.jsx";
-import {initialStateElements} from './initialState'
 import Grid from "@material-ui/core/Grid";
 import {useDispatch, useSelector} from "react-redux";
 import {product} from "../../Redux/Actions/productAction";
+import {comment} from "../../Redux/Actions/commentsAction";
 
 const ProductCard = () => {
     const [showComments, setShowComments] = React.useState(false)
@@ -24,9 +24,11 @@ const ProductCard = () => {
 
     const dispatch = useDispatch()
     const {products} = useSelector(({productsReducer}) => productsReducer)
+    const {comments} = useSelector(({commentsReducer}) => commentsReducer)
 
     React.useEffect(() => {
         dispatch(product())
+        dispatch(comment())
     }, [])
 
     const handleClick = (event) => {
@@ -37,10 +39,9 @@ const ProductCard = () => {
     };
 
     const handleShowComments = (id) => {
-        products.forEach((item) => {
-            // if (item.id === id) {
-            //     setShowComments(!showComments)
-            // }
+        comments.forEach((item) => {
+            console.log(item)
+            console.log(products.find((product) => product.id === item.id))
         })
     }
 
@@ -98,7 +99,7 @@ const ProductCard = () => {
                                     <CommentIcon/>
                                 </IconButton>
                             </CardActions>
-                            {showComments ? <ProductComments product={product}/> : null}
+                            {showComments ? <ProductComments comments={comments}/> : null}
                         </Card>
                     </Grid>
                 )

@@ -6,32 +6,28 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-export const ProductComments = ({product}) => {
+export const ProductComments = ({comments}) => {
+    console.log(comments)
     return (
         <>
-            {product.comments?.map((item, index) => {
-                console.log(index)
-                return (
                     <div>
-                        <Accordion key = {item.comment + (Math.random() * 100)}>
+                        <Accordion key = {(Math.random() * 100)}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
                                 <Typography style={{display: 'flex', alignItems: 'center'}}>
-                                    <AccountCircleIcon/> {item.user_name}
+                                    <AccountCircleIcon/> {comments.id}
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    {item.comment}
+                                    {comments.comment}
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
                     </div>
-                )
-            })}
         </>
     )
 }
