@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
 import productsReducer from "./Products/productsReducer";
-import commentsReducer from "./Comments/commentsReducer";
+import notificationsReducer from './Notifications/notificationsReducer'
 
 export default combineReducers({
     productsReducer,
-    commentsReducer
+    notificationsReducer,
 })

@@ -10,7 +10,7 @@ import StoreBurgerIcon from '../ToolBarItems/ToolBarIcons/StoreBurgerIcon'
 import ToolBarHead from '../ToolBarItems/ToolBarHead/ToolBarHead'
 import ToolBarSearch from "../ToolBarItems/ToolBarSearch/ToolBarSearch";
 
-export default function TopBarMenu() {
+export default function TopBarMenu({notifications}) {
 
     const menuId = 'primary-search-account-menu';
     const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -25,6 +25,7 @@ export default function TopBarMenu() {
                     <Box sx={{ flexGrow: 1 }} />
                     <ToolBarIcons
                         menuId={menuId}
+                        notifications = {notifications}
                     />
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
