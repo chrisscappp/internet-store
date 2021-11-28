@@ -1,7 +1,7 @@
 import {GET_PRODUCTS} from "../Constants/products";
 
 const defaultState = {
-    products: []
+    response: {}
 }
 
 export default function productsReducer (state = defaultState, action) {
@@ -9,7 +9,7 @@ export default function productsReducer (state = defaultState, action) {
         case GET_PRODUCTS:
             return {
                 ...state,
-                products: action.payload
+                response: action.payload
             }
         default:
             return state

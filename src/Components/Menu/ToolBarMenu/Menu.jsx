@@ -4,13 +4,21 @@ import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import { More as MoreIcon } from '@material-ui/icons';
-
 import ToolBarIcons from '../ToolBarItems/ToolBarIcons/ToolBarIcons'
 import StoreBurgerIcon from '../ToolBarItems/ToolBarIcons/StoreBurgerIcon'
 import ToolBarHead from '../ToolBarItems/ToolBarHead/ToolBarHead'
 import ToolBarSearch from "../ToolBarItems/ToolBarSearch/ToolBarSearch";
+import {useDispatch, useSelector} from "react-redux";
+import {notification} from '../../../Redux/Actions/notificationsAction'
 
-export default function TopBarMenu({notifications}) {
+export default function TopBarMenu() {
+
+    const dispatch = useDispatch()
+    const {notifications} = useSelector(({notificationsReducer}) => notificationsReducer)
+
+    React.useEffect(() => {
+        dispatch(notification())
+    }, [])
 
     const menuId = 'primary-search-account-menu';
     const mobileMenuId = 'primary-search-account-menu-mobile';
