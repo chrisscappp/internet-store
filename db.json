@@ -5,7 +5,6 @@
       "title": "New Balance",
       "author": "Игорь Катамаранов",
       "description": "Кроссы огонь!",
-      "comments": [],
       "price": 5000,
       "image": "../../access/images/ProductCard/product.png"
     },
@@ -14,28 +13,6 @@
       "title": "Nike",
       "author": "VasyaBarnaul_2010",
       "description": "Кроссы огонь!",
-      "comments": [
-        {
-          "id": 1,
-          "user_name": "Тут будет проп с именем",
-          "title": "Кроссы хорошие! Думаю возьму себе!"
-        },
-        {
-          "id": 2,
-          "user_name": "Тут будет проп с именем",
-          "title": "Вася я тебя нашёл!"
-        },
-        {
-          "id": 3,
-          "user_name": "Тут будет проп с именем",
-          "title": "English please"
-        },
-        {
-          "id": 4,
-          "user_name": "Тут будет проп с именем",
-          "title": "))))"
-        }
-      ],
       "price": 4000,
       "image": "../../access/images/ProductCard/product.png"
     },
@@ -44,23 +21,6 @@
       "title": "Fila",
       "author": "Артемий Татьяныч",
       "description": "Тёма я твой фанат!",
-      "comments": [
-        {
-          "id": 1,
-          "user_name": "Тут будет проп с именем",
-          "title": "Кроссы хорошие! Думаю возьму себе!"
-        },
-        {
-          "id": 2,
-          "user_name": "Тут будет проп с именем",
-          "title": "Татьяныч жжот!"
-        },
-        {
-          "id": 3,
-          "user_name": "Тут будет проп с именем",
-          "title": "фила уже не в моде((("
-        }
-      ],
       "price": 1000,
       "image": "../../access/images/ProductCard/product.png"
     },
@@ -69,23 +29,6 @@
       "title": "Adidas",
       "author": "Александр Шаненков",
       "description": "Кроссы огонь!",
-      "comments": [
-        {
-          "id": 1,
-          "user_name": "Тут будет проп с именем",
-          "title": "Кроссы хорошие! Думаю возьму себе!"
-        },
-        {
-          "id": 2,
-          "user_name": "Тут будет проп с именем",
-          "title": "Саня зверь"
-        },
-        {
-          "id": 3,
-          "user_name": "Тут будет проп с именем",
-          "title": "что задано?"
-        }
-      ],
       "price": 99000,
       "image": "../../access/images/ProductCard/product.png"
     },
@@ -94,23 +37,6 @@
       "title": "Vans",
       "author": "Илья Бруев",
       "description": "Кроссы огонь!",
-      "comments": [
-        {
-          "id": 1,
-          "user_name": "Тут будет проп с именем",
-          "title": "Кроссы хорошие! Думаю возьму себе!"
-        },
-        {
-          "id": 2,
-          "user_name": "Тут будет проп с именем",
-          "title": "Иля побрейся!!!"
-        },
-        {
-          "id": 3,
-          "user_name": "Тут будет проп с именем",
-          "title": "хехе)))))"
-        }
-      ],
       "price": 7000,
       "image": "../../access/images/ProductCard/product.png"
     },
@@ -119,24 +45,31 @@
       "title": "Asics",
       "author": "Фёдоров Александр",
       "description": "Кроссы огонь!",
-      "comments": [
-        {
-          "id": 1,
-          "user_name": "Тут будет проп с именем",
-          "title": "Кроссы хорошие! Думаю возьму себе!"
-        },
-        {
-          "id": 2,
-          "user_name": "Тут будет проп с именем",
-          "title": "Асиксы мои любимые кроссовки!!!"
-        },
-        {
-          "id": 3,
-          "user_name": "Тут будет проп с именем",
-          "title": "Новая модель!"
-        }
-      ],
       "price": 8000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 7,
+      "title": "Reebok",
+      "author": "крот228",
+      "description": "это крутые ботинки",
+      "price": 999,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 8,
+      "title": "Adidas",
+      "author": "Владимир Рощектаев",
+      "description": "Квадрат катета",
+      "price": 10000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 9,
+      "title": "Nike",
+      "author": "Виталий Сусанин",
+      "description": "Для метро самое то!",
+      "price": 800,
       "image": "../../access/images/ProductCard/product.png"
     }
   ],
@@ -157,5 +90,20 @@
       "id": 4,
       "title": "Хост!"
     }
-  ]
+  ],
+  "commentsProducts1": [],
+  "commentsProducts2": [
+    {
+      "user_name": "Боба",
+      "title": "aboba",
+      "id": 1
+    }
+  ],
+  "commentsProducts3": [],
+  "commentsProducts4": [],
+  "commentsProducts5": [],
+  "commentsProducts6": [],
+  "commentsProducts7": [],
+  "commentsProducts8": [],
+  "commentsProducts9": []
 }

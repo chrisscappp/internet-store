@@ -13,11 +13,22 @@ import CommentIcon from '@mui/icons-material/Comment';
 import Menu from "@material-ui/core/Menu";
 import {ProductComments} from "./ProductComments.jsx";
 import Grid from "@material-ui/core/Grid";
+import {getComments} from '../../api/getComments/getComments'
 
 const ProductCard = ({product}) => {
     const [showComments, setShowComments] = React.useState(false)
+    const [commentsData, setCommentsData] = React.useState([])
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+
+    React.useEffect(() => {
+        getComments(product.id)
+            .then((response) => {
+                if (response.status === 200) {
+                    setCommentsData(response.data)
+                }
+            })
+    }, [])
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -82,7 +93,11 @@ const ProductCard = ({product}) => {
                             <CommentIcon/>
                         </IconButton>
                     </CardActions>
-                    {showComments ? <ProductComments product = {product}/> : null}
+                    {showComments ? <ProductComments
+                        productId = {product.id}
+                        commentsData = {commentsData}
+                        setCommentsData = {setCommentsData}
+                    /> : null}
                 </Card>
             </Grid>
         </>

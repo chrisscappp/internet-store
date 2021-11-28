@@ -10,27 +10,24 @@ import {sendComments} from '../../api/sendComment/sendComment'
 
 const ariaLabel = { 'aria-label': 'description' };
 
-export const ProductComments = ({product}) => {
+export const ProductComments = ({productId, commentsData, setCommentsData}) => {
 
-    const [initialStateUserComment, setInitialStateUserComment] = React.useState('')
-    let userComment = ''
+    const [userComment, setUserComment] = React.useState('')
     const placeHolderFromComment = "Оставить коммент..."
 
-    const setComment = (id) => {
-        userComment = initialStateUserComment
-        setInitialStateUserComment('')
-        sendComments(userComment)
-        if (userComment === '') {
-            alert('Поле пустое :(')
-        } else {
-            alert('Комментарий опубликован!')
+    const setComment = () => {
+        let data = {
+            user_name: 'Боба',
+            title: userComment
         }
-        console.log('GOOD', id)
+        sendComments(productId, data)
+        setCommentsData([...commentsData, data])
+        setUserComment('')
     }
 
     return (
         <>
-            {product.comments?.map((comment, index) => {
+            {commentsData?.map((comment, index) => {
                 return (
                     <div key={index + comment.id}>
                         <Accordion>
@@ -52,7 +49,7 @@ export const ProductComments = ({product}) => {
                     </div>
                 )
             })}
-            {!product.comments ?
+            {commentsData.length === 0 ?
                 <div style={{marginLeft: '8px', marginBottom: '8px'}}>
                     <Typography>Комментариев к товару не найдено. Стань первым кто его оставит!</Typography>
                 </div>
@@ -63,14 +60,14 @@ export const ProductComments = ({product}) => {
                 <div style={{marginBottom: '0px'}}>
                     <Input
                         type="text"
-                        value={initialStateUserComment}
+                        value={userComment}
                         placeholder={placeHolderFromComment}
                         inputProps={ariaLabel}
-                        onChange={(event) => setInitialStateUserComment(event.target.value)}
+                        onChange={(event) => setUserComment(event.target.value)}
                     />
                 </div>
                 <div style={{marginRight: '8px'}}>
-                    <button type="button" className="btn btn-primary" onClick={() => setComment(product.id)}>Опубликовать</button>
+                    <button type="button" className="btn btn-primary" onClick={setComment}>Опубликовать</button>
                 </div>
             </div>
         </>
