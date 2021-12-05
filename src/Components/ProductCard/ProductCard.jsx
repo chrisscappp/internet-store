@@ -13,21 +13,22 @@ import CommentIcon from '@mui/icons-material/Comment';
 import Menu from "@material-ui/core/Menu";
 import {ProductComments} from "./ProductComments.jsx";
 import Grid from "@material-ui/core/Grid";
-import {getComments} from '../../api/getComments/getComments'
+import {useDispatch, useSelector} from "react-redux";
+import {comments} from '../../Redux/Actions/commentsAction'
 
 const ProductCard = ({product}) => {
     const [showComments, setShowComments] = React.useState(false)
     const [commentsData, setCommentsData] = React.useState([])
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const dispatch = useDispatch()
+    const response = useSelector(({commentsReducer}) => commentsReducer)
 
     React.useEffect(() => {
-        getComments(product.id)
-            .then((response) => {
-                if (response.status === 200) {
-                    setCommentsData(response.data)
-                }
-            })
+        dispatch(comments(product.id))
+        if (response.status === 200) {
+            setCommentsData(response.data)
+        }
     }, [])
 
     const handleClick = (event) => {

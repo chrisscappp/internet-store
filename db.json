@@ -91,14 +91,19 @@
       "title": "Хост!"
     }
   ],
-  "commentsProducts1": [],
-  "commentsProducts2": [
+  "commentsProducts1": [
     {
       "user_name": "Боба",
-      "title": "aboba",
+      "title": "авав",
       "id": 1
+    },
+    {
+      "user_name": "Боба",
+      "title": "боба",
+      "id": 2
     }
   ],
+  "commentsProducts2": [],
   "commentsProducts3": [],
   "commentsProducts4": [],
   "commentsProducts5": [],
