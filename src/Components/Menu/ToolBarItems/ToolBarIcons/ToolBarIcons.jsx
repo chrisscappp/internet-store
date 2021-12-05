@@ -5,6 +5,7 @@ import {AccountCircle, Mail as MailIcon, Notifications as NotificationsIcon} fro
 import Box from "@material-ui/core/Box";
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button'
 
 const style = {
     position: 'absolute',
@@ -21,12 +22,20 @@ const style = {
 const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
 
     const [showNotifications, setShowNotifications] = React.useState(false)
-    const [notificationsLength, setNotificationsLength] = React.useState(notifications.length)
+    const [componentNotifications, setComponentNotifications] = React.useState([])
     const handleClose = () => setShowNotifications(false);
+
+    React.useEffect(() => {
+        setComponentNotifications(notifications)
+    }, [notifications])
 
     const viewNotifications = () => {
         setShowNotifications(!showNotifications)
-        setNotificationsLength(0)
+    }
+
+    const clearNotifications = () => {
+        setComponentNotifications([])
+        setShowNotifications(false)
     }
 
     return (
@@ -42,7 +51,7 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
                     aria-label="show 17 new notifications"
                     color="inherit"
                 >
-                    <Badge badgeContent={notificationsLength} color="error">
+                    <Badge badgeContent={componentNotifications.length} color="error">
                         <NotificationsIcon onClick={viewNotifications}/>
                         <div>
                             <Modal
@@ -55,16 +64,27 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
                                     <Typography id="modal-modal-title" variant="h6" component="h2">
                                         Твои уведомления:
                                     </Typography>
-                                    {notifications.length === 0 ? <Typography>Уведомлений пока нет</Typography>
+                                    {componentNotifications.length === 0 ?
+                                        <div style={{marginTop: '5px'}}>
+                                            <Typography>Уведомлений пока нет</Typography>
+                                        </div>
                                         :notifications.map((item, index) => {
                                         return (
-                                            <>
-                                                <Typography key = {index + item.title} id="modal-modal-description" sx={{mt: 2}}>
+                                            <div key = {index + item.title}>
+                                                <Typography id="modal-modal-description" sx={{mt: 2}}>
                                                     {item.title}
                                                 </Typography>
-                                            </>
+                                            </div>
                                         )
                                     })}
+                                    {componentNotifications.length === 0 ? null
+                                    :
+                                        <div style={{marginTop: '5px'}}>
+                                            <Button variant="outlined" color="error" onClick={clearNotifications}>
+                                                Очистить уведомления
+                                            </Button>
+                                        </div>
+                                    }
                                 </Box>
                             </Modal>
                         </div>
