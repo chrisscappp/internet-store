@@ -84,22 +84,26 @@
     },
     {
       "id": 3,
-      "title": "Артемий Татьянович лайкнул ваш товар!!"
+      "title": "Артемий Татьянович лайкнул ваш товар!"
     },
     {
       "id": 4,
       "title": "Хост!"
+    },
+    {
+      "id": 5,
+      "title": "Владимир Рощектаев задал домашку по алгебре!"
     }
   ],
   "commentsProducts1": [
     {
       "user_name": "Боба",
-      "title": "авав",
+      "title": "авава",
       "id": 1
     },
     {
       "user_name": "Боба",
-      "title": "боба",
+      "title": "Кроссы топ!",
       "id": 2
     }
   ],
@@ -110,5 +114,23 @@
   "commentsProducts6": [],
   "commentsProducts7": [],
   "commentsProducts8": [],
-  "commentsProducts9": []
+  "commentsProducts9": [],
+  "likedProducts": [
+    {
+      "id": 1,
+      "title": "New Balance",
+      "author": "Игорь Катамаранов",
+      "description": "Кроссы огонь!",
+      "price": 5000,
+      "image": "../../access/images/ProductCard/product.png"
+    },
+    {
+      "id": 2,
+      "title": "Nike",
+      "author": "VasyaBarnaul_2010",
+      "description": "Кроссы огонь!",
+      "price": 4000,
+      "image": "../../access/images/ProductCard/product.png"
+    }
+  ]
 }

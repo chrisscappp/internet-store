@@ -1,11 +1,12 @@
-import {getNotifications} from '../../api/getNotifications/getNotifications'
-import {NOTIFICATIONS} from '../Constants/notifications'
+import {getData} from '../../api/get/getData'
+import {NOTIFICATIONS} from '../../api/urls/urls'
+import {GET_NOTIFICATIONS} from '../Constants/notifications'
 
 export const notification = () => {
     return (dispatch) => {
-        getNotifications
+        getData(`${NOTIFICATIONS}`)
             .then((response) => {
-                dispatch({type: NOTIFICATIONS, payload: response.data})
+                dispatch({type: GET_NOTIFICATIONS, payload: response.data})
             })
     }
 }

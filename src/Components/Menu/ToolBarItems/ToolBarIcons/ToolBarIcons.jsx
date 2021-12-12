@@ -1,13 +1,15 @@
 import React from 'react'
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
-import {AccountCircle, Mail as MailIcon, Notifications as NotificationsIcon} from "@material-ui/icons";
+import {AccountCircle, Notifications as NotificationsIcon} from "@material-ui/icons";
 import Box from "@material-ui/core/Box";
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button'
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import {Link} from 'react-router-dom'
 
-const style = {
+const styleForModal = {
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -41,11 +43,13 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
     return (
         <>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={0} color="error">
-                        <MailIcon />
-                    </Badge>
-                </IconButton>
+                <Link to="/basket">
+                    <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                        <Badge badgeContent={0} color="error">
+                            <ShoppingBasketIcon />
+                        </Badge>
+                    </IconButton>
+                </Link>
                 <IconButton
                     size="large"
                     aria-label="show 17 new notifications"
@@ -60,7 +64,7 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
                                 aria-labelledby="modal-modal-title"
                                 aria-describedby="modal-modal-description"
                             >
-                                <Box sx={style}>
+                                <Box sx={styleForModal}>
                                     <Typography id="modal-modal-title" variant="h6" component="h2">
                                         Твои уведомления:
                                     </Typography>
@@ -90,17 +94,19 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
                         </div>
                     </Badge>
                 </IconButton>
-                <IconButton
-                    size="large"
-                    edge="end"
-                    aria-label="account of current user"
-                    aria-controls={menuId}
-                    aria-haspopup="true"
-                    onClick={handleProfileMenuOpen}
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
+                <Link to = "/login">
+                    <IconButton
+                        size="large"
+                        edge="end"
+                        aria-label="account of current user"
+                        aria-controls={menuId}
+                        aria-haspopup="true"
+                        onClick={handleProfileMenuOpen}
+                        color="inherit"
+                    >
+                        <AccountCircle />
+                    </IconButton>
+                </Link>
             </Box>
         </>
     )
