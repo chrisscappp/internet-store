@@ -1,4 +1,4 @@
-import {NOTIFICATIONS} from "../Constants/notifications";
+import {GET_NOTIFICATIONS} from "../../Constants/notifications";
 
 const defaultState = {
     notifications: []
@@ -6,7 +6,7 @@ const defaultState = {
 
 export default function notificationsReducer(state = defaultState, action) {
     switch(action.type) {
-        case NOTIFICATIONS:
+        case GET_NOTIFICATIONS:
             return {
                 ...state,
                 notifications: action.payload

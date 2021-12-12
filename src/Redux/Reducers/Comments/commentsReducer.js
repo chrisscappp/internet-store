@@ -1,12 +1,12 @@
-import {GET_PRODUCTS} from "../Constants/products";
+import {GET_COMMENTS} from "../../Constants/comments";
 
 const defaultState = {
-    response: {}
+    response: []
 }
 
-export default function productsReducer (state = defaultState, action) {
+export default function commentsReducer (state = defaultState, action) {
     switch(action.type) {
-        case GET_PRODUCTS:
+        case GET_COMMENTS:
             return {
                 ...state,
                 response: action.payload

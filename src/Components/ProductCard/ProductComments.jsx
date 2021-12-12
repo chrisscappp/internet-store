@@ -11,9 +11,6 @@ import {sendComments} from '../../api/sendComment/sendComment'
 const ariaLabel = { 'aria-label': 'description' };
 
 export const ProductComments = ({productId, commentsData, setCommentsData}) => {
-
-    console.log('commentss', setCommentsData)
-
     const [userComment, setUserComment] = React.useState('')
     const placeHolderFromComment = "Оставить коммент..."
 

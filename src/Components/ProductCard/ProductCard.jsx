@@ -11,24 +11,25 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MenuItem from "@material-ui/core/MenuItem";
 import CommentIcon from '@mui/icons-material/Comment';
 import Menu from "@material-ui/core/Menu";
-import {ProductComments} from "./ProductComments.jsx";
+import {ProductComments} from "./ProductComments";
 import Grid from "@material-ui/core/Grid";
-import {useDispatch, useSelector} from "react-redux";
-import {comments} from '../../Redux/Actions/commentsAction'
+import {COMMENTS} from "../../api/urls/urls";
+import {getData} from '../../api/get/getData'
+import {sendData} from '../../api/send/sendData'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const ProductCard = ({product}) => {
     const [showComments, setShowComments] = React.useState(false)
     const [commentsData, setCommentsData] = React.useState([])
+    const [likedProduct, setLikedProduct] = React.useState(false)
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-    const dispatch = useDispatch()
-    const response = useSelector(({commentsReducer}) => commentsReducer)
 
     React.useEffect(() => {
-        dispatch(comments(product.id))
-        if (response.status === 200) {
-            setCommentsData(response.data)
-        }
+        getData(`${COMMENTS}${product.id}`)
+            .then((response) => {
+                setCommentsData(response.data)
+            })
     }, [])
 
     const handleClick = (event) => {
@@ -40,6 +41,19 @@ const ProductCard = ({product}) => {
 
     const handleShowComments = (id) => {
         setShowComments(!showComments)
+    }
+
+    const likeProduct = () => {
+        let data = {
+            id: product.id,
+            title: product.title,
+            author: product.author,
+            description: product.description,
+            price: product.price,
+            image: product.image
+        }
+        sendData(data)
+        setLikedProduct(true)
     }
 
     return (
@@ -87,8 +101,11 @@ const ProductCard = ({product}) => {
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites">
-                            <FavoriteIcon/>
+                        <IconButton aria-label="add to favorites" onClick={likeProduct}>
+                            {likedProduct ?
+                                <FavoriteIcon style = {{color: '#ff3d3d'}}/>
+                            :
+                                <FavoriteBorderIcon/>}
                         </IconButton>
                         <IconButton onClick={() => handleShowComments(product.id)}>
                             <CommentIcon/>

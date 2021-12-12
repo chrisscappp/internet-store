@@ -5,29 +5,34 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import { More as MoreIcon } from '@material-ui/icons';
 import ToolBarIcons from '../ToolBarItems/ToolBarIcons/ToolBarIcons'
-import StoreBurgerIcon from '../ToolBarItems/ToolBarIcons/StoreBurgerIcon'
 import ToolBarHead from '../ToolBarItems/ToolBarHead/ToolBarHead'
 import ToolBarSearch from "../ToolBarItems/ToolBarSearch/ToolBarSearch";
 import {useDispatch, useSelector} from "react-redux";
 import {notification} from '../../../Redux/Actions/notificationsAction'
+import {getLikedProducts} from '../../../Redux/Actions/likedProductsAction'
+import HomeIcon from "../ToolBarItems/ToolBarIcons/HomeIcon";
 
 export default function TopBarMenu() {
 
     const dispatch = useDispatch()
     const {notifications} = useSelector(({notificationsReducer}) => notificationsReducer)
+    const {likedProducts} = useSelector(({likedProductsReducer}) => likedProductsReducer)
 
     React.useEffect(() => {
         dispatch(notification())
+        setTimeout(() => dispatch(getLikedProducts()), 2000)
     }, [])
 
     const menuId = 'primary-search-account-menu';
     const mobileMenuId = 'primary-search-account-menu-mobile';
 
+    console.log('liked',likedProducts)
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <StoreBurgerIcon/>
+                    <HomeIcon/>
                     <ToolBarHead/>
                     <ToolBarSearch/>
                     <Box sx={{ flexGrow: 1 }} />
