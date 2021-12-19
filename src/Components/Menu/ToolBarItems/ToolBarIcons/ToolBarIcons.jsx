@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 const styleForModal = {
     position: 'absolute',
@@ -21,15 +21,20 @@ const styleForModal = {
     p: 4,
 };
 
-const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
+const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProducts}) => {
 
     const [showNotifications, setShowNotifications] = React.useState(false)
     const [componentNotifications, setComponentNotifications] = React.useState([])
+    const [componentLiked, setComponentLiked] = React.useState([])
     const handleClose = () => setShowNotifications(false);
 
     React.useEffect(() => {
         setComponentNotifications(notifications)
     }, [notifications])
+
+    React.useEffect(() => {
+        setComponentLiked(likedProducts)
+    }, [likedProducts])
 
     const viewNotifications = () => {
         setShowNotifications(!showNotifications)
@@ -40,16 +45,23 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
         setShowNotifications(false)
     }
 
+    let activeStyle = {
+        textDecoration: "underline",
+        color: "white"
+    };
+
     return (
         <>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <Link to="/basket">
                     <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                         <Badge badgeContent={0} color="error">
-                            <ShoppingBasketIcon />
+                            <NavLink to="/basket" style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                            }>
+                                <ShoppingBasketIcon />
+                            </NavLink>
                         </Badge>
                     </IconButton>
-                </Link>
                 <IconButton
                     size="large"
                     aria-label="show 17 new notifications"
@@ -94,7 +106,6 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
                         </div>
                     </Badge>
                 </IconButton>
-                <Link to = "/login">
                     <IconButton
                         size="large"
                         edge="end"
@@ -104,9 +115,12 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications}) => {
                         onClick={handleProfileMenuOpen}
                         color="inherit"
                     >
-                        <AccountCircle />
+                        <NavLink to = "/login" style={({isActive}) =>
+                            isActive ? activeStyle : undefined
+                        }>
+                            <AccountCircle />
+                        </NavLink>
                     </IconButton>
-                </Link>
             </Box>
         </>
     )

@@ -9,24 +9,19 @@ import ToolBarHead from '../ToolBarItems/ToolBarHead/ToolBarHead'
 import ToolBarSearch from "../ToolBarItems/ToolBarSearch/ToolBarSearch";
 import {useDispatch, useSelector} from "react-redux";
 import {notification} from '../../../Redux/Actions/notificationsAction'
-import {getLikedProducts} from '../../../Redux/Actions/likedProductsAction'
 import HomeIcon from "../ToolBarItems/ToolBarIcons/HomeIcon";
 
-export default function TopBarMenu() {
+export default function TopBarMenu({likedProducts}) {
 
     const dispatch = useDispatch()
     const {notifications} = useSelector(({notificationsReducer}) => notificationsReducer)
-    const {likedProducts} = useSelector(({likedProductsReducer}) => likedProductsReducer)
 
     React.useEffect(() => {
         dispatch(notification())
-        setTimeout(() => dispatch(getLikedProducts()), 2000)
     }, [])
 
     const menuId = 'primary-search-account-menu';
     const mobileMenuId = 'primary-search-account-menu-mobile';
-
-    console.log('liked',likedProducts)
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -39,6 +34,7 @@ export default function TopBarMenu() {
                     <ToolBarIcons
                         menuId={menuId}
                         notifications = {notifications}
+                        likedProducts={likedProducts}
                     />
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
