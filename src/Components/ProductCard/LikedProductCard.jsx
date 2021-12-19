@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MenuItem from "@material-ui/core/MenuItem";
 import CommentIcon from '@mui/icons-material/Comment';
@@ -15,13 +14,10 @@ import {ProductComments} from "./ProductComments";
 import Grid from "@material-ui/core/Grid";
 import {COMMENTS} from "../../api/urls/urls";
 import {getData} from '../../api/get/getData'
-import {sendData} from '../../api/send/sendData'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-const ProductCard = ({product}) => {
+const LikedProductCard = ({product}) => {
     const [showComments, setShowComments] = React.useState(false)
     const [commentsData, setCommentsData] = React.useState([])
-    const [likedProduct, setLikedProduct] = React.useState(false)
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
@@ -32,6 +28,8 @@ const ProductCard = ({product}) => {
             })
     }, [])
 
+    console.log(commentsData)
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -41,18 +39,6 @@ const ProductCard = ({product}) => {
 
     const handleShowComments = (id) => {
         setShowComments(!showComments)
-    }
-
-    const likeProduct = () => {
-        let data = {
-            title: product.title,
-            author: product.author,
-            description: product.description,
-            price: product.price,
-            image: product.image
-        }
-        sendData(data)
-        setLikedProduct(!likedProduct)
     }
 
     return (
@@ -100,11 +86,8 @@ const ProductCard = ({product}) => {
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites" onClick={likeProduct}>
-                            {likedProduct ?
-                                <FavoriteIcon style = {{color: '#ff3d3d'}}/>
-                            :
-                                <FavoriteBorderIcon/>}
+                        <IconButton aria-label="add to favorites">
+                            <div><h4>Купить</h4></div>
                         </IconButton>
                         <IconButton onClick={() => handleShowComments(product.id)}>
                             <CommentIcon/>
@@ -121,4 +104,4 @@ const ProductCard = ({product}) => {
     )
 }
 
-export default ProductCard
+export default LikedProductCard

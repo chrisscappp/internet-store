@@ -6,7 +6,6 @@ import '../../access/style/style.css'
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../../Redux/Actions/productAction";
 import {Spinner} from '../../Components/Spinner/Spinner'
-import {Link} from "react-router-dom";
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -35,11 +34,6 @@ const Home = () => {
                             )
                         })
                     }
-                </Grid>
-                <Grid container item spacing={3}>
-                    <Grid item xs={6}>
-                        <div style={{display: 'flex',justifyContent: 'center', alignItems: 'center'}}>тут был саня)</div>
-                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

@@ -6,3 +6,11 @@
 .products_container{
     display: none;
 }
+
+.App {
+    background-color: #ffff7d;
+}
+
+.layouts_container {
+    background-color: #f7f7f7;
+}

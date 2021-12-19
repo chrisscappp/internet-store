@@ -1,7 +1,7 @@
 import React from 'react'
 import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from '@mui/material/SvgIcon';
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 const HomeIcon = () => {
 
@@ -13,24 +13,20 @@ const HomeIcon = () => {
         );
     }
 
-    const handleEvent = (event) => {
-        console.log('Тут был бругер стор меню', event)
-    }
-
     return (
         <>
-            <Link to = "/">
+
                 <IconButton
                     size="large"
                     edge="start"
                     color="inherit"
                     aria-label="open drawer"
                     sx={{ mr: 2 }}
-                    onClick={(event) => handleEvent(event)}
                 >
-                    <HomeIcon sx={{ fontSize: 30 }} />
+                    <NavLink to = "/">
+                        <HomeIcon sx={{ fontSize: 30 }} />
+                    </NavLink>
                 </IconButton>
-            </Link>
         </>
     )
 }
