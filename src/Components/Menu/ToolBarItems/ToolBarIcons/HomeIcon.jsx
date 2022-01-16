@@ -23,7 +23,7 @@ const HomeIcon = () => {
                     aria-label="open drawer"
                     sx={{ mr: 2 }}
                 >
-                    <NavLink to = "/">
+                    <NavLink to = "/" className="inactive" activeClassName="active">
                         <HomeIcon sx={{ fontSize: 30 }} />
                     </NavLink>
                 </IconButton>

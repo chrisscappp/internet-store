@@ -24,7 +24,7 @@ export default function TopBarMenu({likedProducts}) {
     const mobileMenuId = 'primary-search-account-menu-mobile';
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} className="headerMenu">
             <AppBar position="static">
                 <Toolbar>
                     <HomeIcon/>

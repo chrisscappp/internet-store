@@ -55,9 +55,7 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                     <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                         <Badge badgeContent={0} color="error">
-                            <NavLink to="/basket" style={({ isActive }) =>
-                                isActive ? activeStyle : undefined
-                            }>
+                            <NavLink to="/basket" className="inactive" activeClassName="active">
                                 <ShoppingBasketIcon />
                             </NavLink>
                         </Badge>
@@ -115,9 +113,7 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
                         onClick={handleProfileMenuOpen}
                         color="inherit"
                     >
-                        <NavLink to = "/login" style={({isActive}) =>
-                            isActive ? activeStyle : undefined
-                        }>
+                        <NavLink to = "/login" className="inactive" activeClassName="active">
                             <AccountCircle />
                         </NavLink>
                     </IconButton>

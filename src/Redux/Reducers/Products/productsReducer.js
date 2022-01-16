@@ -1,7 +1,8 @@
-import {GET_PRODUCTS} from "../../Constants/products";
+import {GET_PRODUCTS, SET_PAGES} from "../../Constants/products";
 
 const defaultState = {
-    products: []
+    products: {},
+    pages: 1
 }
 
 export default function productsReducer (state = defaultState, action) {
@@ -10,6 +11,11 @@ export default function productsReducer (state = defaultState, action) {
             return {
                 ...state,
                 products: action.payload
+            }
+        case SET_PAGES:
+            return {
+                ...state,
+                pages: action.payload
             }
         default:
             return state

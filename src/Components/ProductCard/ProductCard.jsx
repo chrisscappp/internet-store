@@ -69,7 +69,6 @@ const ProductCard = ({product}) => {
                                 aria-expanded={open ? 'true' : undefined}
                                 onClick={handleClick}
                             >
-                                <MoreVertIcon/>
                                 <Menu
                                     id="basic-menu"
                                     anchorEl={anchorEl}
@@ -103,7 +102,7 @@ const ProductCard = ({product}) => {
                         <IconButton aria-label="add to favorites" onClick={likeProduct}>
                             {likedProduct ?
                                 <FavoriteIcon style = {{color: '#ff3d3d'}}/>
-                            :
+                                :
                                 <FavoriteBorderIcon/>}
                         </IconButton>
                         <IconButton onClick={() => handleShowComments(product.id)}>

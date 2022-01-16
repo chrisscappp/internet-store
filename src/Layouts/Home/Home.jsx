@@ -9,11 +9,28 @@ import {Spinner} from '../../Components/Spinner/Spinner'
 
 const Home = () => {
     const dispatch = useDispatch()
-    const {products} = useSelector(({productsReducer}) => productsReducer)
+    const {products, pages} = useSelector(({productsReducer}) => productsReducer)
+    const [countPages, setCountPages] = React.useState([])
 
     React.useEffect(() => {
-        dispatch(getProducts())
-    }, [])
+        dispatch(getProducts(1))
+        pag(pages)
+    }, [pages])
+
+    console.log('prdocuts', products)
+
+    const pag = (pagValue) => {
+        const pagesArray = []
+        for (let i = 1; i<= pagValue; i++) {
+            pagesArray.push(i)
+        }
+        setCountPages(pagesArray)
+    }
+
+    const navPage = (page) => {
+        dispatch(getProducts(page))
+    }
+
 
     return (
         <Grid container
@@ -23,19 +40,34 @@ const Home = () => {
             <Grid item>
                 <TopBarMenu/>
             </Grid>
-            <Grid item container spacing={1} className = "products_container">
-                <Grid container item spacing={3}>
-                    {products.length === 0 ?
-                        <Spinner/>
-                    :
-                        products.map((product, index) => {
-                            return (
-                                <ProductCard key = {index + product.id} product = {product}/>
-                            )
-                        })
-                    }
+                <Grid item container spacing={1} className = "products_container">
+                    <Grid container item spacing={3}>
+                        {
+                            products?.product?.map((product, index) => {
+                                return (
+                                    <ProductCard key = {index + product.id} product = {product}/>
+                                )
+                            })
+                        }
+                    </Grid>
                 </Grid>
-            </Grid>
+            <ul className="paginateUl">
+                {countPages?.map((page) => {
+                    return (
+                        <li
+                            onClick={() => navPage(page)}
+                            key={page}
+                            className="paginateLi"
+                        >
+                            <button className="paginateButton">
+                                <a href="javascript:scroll(0,0)" className="paginateA">
+                                    <h5>{page}</h5>
+                                </a>
+                            </button>
+                        </li>
+                    )
+                })}
+            </ul>
         </Grid>
     )
 }
