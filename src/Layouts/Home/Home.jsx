@@ -6,31 +6,25 @@ import '../../access/style/style.css'
 import {useDispatch, useSelector} from "react-redux";
 import {getProducts} from "../../Redux/Actions/productAction";
 import {Spinner} from '../../Components/Spinner/Spinner'
+import ReactPaginate from "react-paginate";
 
 const Home = () => {
     const dispatch = useDispatch()
-    const {products, pages} = useSelector(({productsReducer}) => productsReducer)
-    const [countPages, setCountPages] = React.useState([])
+    const {products, pages, isLoading} = useSelector(({productsReducer}) => productsReducer)
+    const [value, setValue] = React.useState('')
 
     React.useEffect(() => {
         dispatch(getProducts(1))
-        pag(pages)
     }, [pages])
 
-    console.log('prdocuts', products)
-
-    const pag = (pagValue) => {
-        const pagesArray = []
-        for (let i = 1; i<= pagValue; i++) {
-            pagesArray.push(i)
-        }
-        setCountPages(pagesArray)
-    }
-
-    const navPage = (page) => {
+    const navPage = (data) => {
+        let page = data.selected + 1
         dispatch(getProducts(page))
     }
 
+    const filteredProducts = products?.product?.filter(product => {
+        return product.title.toLowerCase().includes(value.toLowerCase())
+    })
 
     return (
         <Grid container
@@ -38,36 +32,52 @@ const Home = () => {
               rowSpacing={3}
         >
             <Grid item>
-                <TopBarMenu/>
+                <TopBarMenu
+                    value={value}
+                    setValue={setValue}
+                />
             </Grid>
-                <Grid item container spacing={1} className = "products_container">
-                    <Grid container item spacing={3}>
-                        {
-                            products?.product?.map((product, index) => {
-                                return (
-                                    <ProductCard key = {index + product.id} product = {product}/>
-                                )
-                            })
-                        }
+            <Grid>
+                {
+                    isLoading ?
+                    <Grid>
+                        <Spinner/>
                     </Grid>
-                </Grid>
-            <ul className="paginateUl">
-                {countPages?.map((page) => {
-                    return (
-                        <li
-                            onClick={() => navPage(page)}
-                            key={page}
-                            className="paginateLi"
-                        >
-                            <button className="paginateButton">
-                                <a href="javascript:scroll(0,0)" className="paginateA">
-                                    <h5>{page}</h5>
-                                </a>
-                            </button>
-                        </li>
-                    )
-                })}
-            </ul>
+                    :
+                    <Grid>
+                        <Grid item container spacing={1} className="products_container">
+                            <Grid container item spacing={3}>
+                                {
+                                    filteredProducts?.map((product, index) => {
+                                        return (
+                                            <ProductCard key={index + product.id} product={product}/>
+                                        )
+                                    })
+                                }
+                            </Grid>
+                        </Grid>
+                        <ReactPaginate
+                            previousLabel={'previous'}
+                            breakLabel={'...'}
+                            nextLabel={'next'}
+                            pageCount={pages}
+                            marginPagesDisplayed={3}
+                            pageRangeDisplayed={3}
+                            onPageChange={navPage}
+                            containerClassName={'pagination justify-content-center mt-4'}
+                            pageClassName={'page-item'}
+                            pageLinkClassName={'page-link'}
+                            previousClassName={'page-item'}
+                            previousLinkClassName={'page-link'}
+                            nextClassName={'page-item'}
+                            nextLinkClassName={'page-link'}
+                            breakClassName={'page-item'}
+                            breakLinkClassName={'page-link'}
+                            activeClassName={'active'}
+                        />
+                    </Grid>
+                }
+            </Grid>
         </Grid>
     )
 }

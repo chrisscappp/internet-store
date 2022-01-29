@@ -1,13 +1,27 @@
 import React from 'react'
-import Grid from "@material-ui/core/Grid";
 import '../../access/style/style.css'
-import {Spinner} from '../../Components/Spinner/Spinner'
 
 const Login = () => {
     return (
-        <div>
-            Тут будет страница входа)
-        </div>
+        <form>
+            <div className="form-group row">
+                <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Email</label>
+                <div className="col-sm-10">
+                    <input type="text" readOnly className="form-control-plaintext" id="staticEmail"
+                           value="email@example.com">
+
+                    </input>
+                </div>
+            </div>
+            <div className="form-group row">
+                <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Password</label>
+                <div className="col-sm-10">
+                    <input type="password" className="form-control" id="inputPassword">
+
+                    </input>
+                </div>
+            </div>
+        </form>
     )
 }
 

@@ -154,33 +154,33 @@
     ]
   },
   "products3": {
-      "countPages": 3,
-      "product": [
-        {
-          "id": 19,
-          "title": "Nike",
-          "author": "Игорь Катамаранов",
-          "description": "Кроссовки для вас",
-          "price": 8000,
-          "image": "https://static.onlinetrade.ru/img/items/b/nike_943287_600_flex_experience_run_7_gs_dlya_devochki_tsvet_rozovyy_razmer_34_5_765002_7.jpg"
-        },
-        {
-          "id": 20,
-          "title": "Asics",
-          "author": "Илья Бруев",
-          "description": "да",
-          "price": 3444,
-          "image": "https://www.sportkult.ru/ipreview/goods/820/820/photo_8463.jpg"
-        },
-        {
-          "id": 21,
-          "title": "Puma",
-          "author": "глазычева рита",
-          "description": "puma",
-          "price": "Много",
-          "image": "https://avatars.mds.yandex.net/i?id=f3b56186a54fc81b7282a406b9dff5b1-5236398-images-thumbs&n=13"
-        }
-        ]
+    "countPages": 3,
+    "product": [
+      {
+        "id": 19,
+        "title": "Nike",
+        "author": "Игорь Катамаранов",
+        "description": "Кроссовки для вас",
+        "price": 8000,
+        "image": "https://static.onlinetrade.ru/img/items/b/nike_943287_600_flex_experience_run_7_gs_dlya_devochki_tsvet_rozovyy_razmer_34_5_765002_7.jpg"
+      },
+      {
+        "id": 20,
+        "title": "Asics",
+        "author": "Илья Бруев",
+        "description": "да",
+        "price": 3444,
+        "image": "https://www.sportkult.ru/ipreview/goods/820/820/photo_8463.jpg"
+      },
+      {
+        "id": 21,
+        "title": "Puma",
+        "author": "глазычева рита",
+        "description": "puma",
+        "price": "Много",
+        "image": "https://avatars.mds.yandex.net/i?id=f3b56186a54fc81b7282a406b9dff5b1-5236398-images-thumbs&n=13"
+      }
+    ]
   },
   "notifications": [
     {
@@ -213,13 +213,7 @@
   "commentsProducts7": [],
   "commentsProducts8": [],
   "commentsProducts9": [],
-  "commentsProducts10": [
-    {
-      "user_name": "Боба",
-      "title": "авав",
-      "id": 1
-    }
-  ],
+  "commentsProducts10": [],
   "commentsProducts11": [],
   "commentsProducts12": [],
   "commentsProducts13": [],
@@ -231,70 +225,5 @@
   "commentsProducts19": [],
   "commentsProducts20": [],
   "commentsProducts21": [],
-  "likedProducts": [
-    {
-      "title": "New Balance",
-      "author": "Игорь Катамаранов",
-      "description": "Кроссы огонь!",
-      "price": 5000,
-      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
-      "id": 1
-    },
-    {
-      "title": "Fila",
-      "author": "Артемий Татьяныч",
-      "description": "Тёма я твой фанат!",
-      "price": 1000,
-      "image": "https://media.thetab.com/blogs.dir/90/files/2018/11/sneaker-runningshoe-footwear-shoe-apparel-clothing.jpeg",
-      "id": 2
-    },
-    {
-      "title": "Nike",
-      "author": "VasyaBarnaul_2010",
-      "description": "Кроссы огонь!",
-      "price": 4000,
-      "image": "https://rostov-na-donu.streetfoot.ru/wp-content/uploads/2019/09/e3fbbffc3591cd2656369ad94d0c36f7.jpg",
-      "id": 3
-    },
-    {
-      "title": "Adidas",
-      "author": "Олег Монгол",
-      "description": "Для метро самое то!",
-      "price": 5443,
-      "image": "https://images.ru.prom.st/792047181_w640_h640_krossovki-adidas-gazelle.jpg",
-      "id": 4
-    },
-    {
-      "title": "New Balance",
-      "author": "Игорь Катамаранов",
-      "description": "Кроссы огонь!",
-      "price": 5000,
-      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
-      "id": 5
-    },
-    {
-      "title": "New Balance",
-      "author": "Игорь Катамаранов",
-      "description": "Кроссы огонь!",
-      "price": 5000,
-      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
-      "id": 6
-    },
-    {
-      "title": "New Balance",
-      "author": "Игорь Катамаранов",
-      "description": "Кроссы огонь!",
-      "price": 5000,
-      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
-      "id": 7
-    },
-    {
-      "title": "New Balance",
-      "author": "Игорь Катамаранов",
-      "description": "Кроссы огонь!",
-      "price": 5000,
-      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
-      "id": 8
-    }
-  ]
+  "likedProducts": []
 }

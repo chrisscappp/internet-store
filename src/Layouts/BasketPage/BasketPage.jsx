@@ -9,13 +9,16 @@ import LikedProductCard from '../../Components/ProductCard/LikedProductCard'
 
 const BasketPage = () => {
     const dispatch = useDispatch()
-    const {likedProducts} = useSelector(({likedProductsReducer}) => likedProductsReducer)
+    const {likedProducts, isLoading} = useSelector(({likedProductsReducer}) => likedProductsReducer)
+    const [productsOnBasket, setProductsOnBasket] = React.useState([])
 
     React.useEffect(() => {
         dispatch(getLikedProducts())
     }, [])
 
-    console.log('like',likedProducts)
+    React.useEffect(() => {
+        setProductsOnBasket(likedProducts.data)
+    }, [likedProducts])
 
     return (
         <Grid container
@@ -23,21 +26,37 @@ const BasketPage = () => {
               rowSpacing={3}
         >
             <Grid item>
-                <TopBarMenu likedProducts={likedProducts}/>
+                <TopBarMenu likedProducts={likedProducts.data}/>
             </Grid>
-            <Grid item container spacing={1} className = "likedProducts_container">
-                <Grid container item spacing={3}>
-                    {likedProducts.length === 0 ?
-                        <Spinner/>
-                        :
-                        likedProducts.map((product, index) => {
-                            return (
-                                <LikedProductCard key = {index + product.id} product = {product}/>
-                            )
-                        })
-                    }
+            {
+                isLoading ?
+                <Grid>
+                    <Spinner/>
                 </Grid>
-            </Grid>
+                :
+                    <Grid item container spacing={1} className = "likedProducts_container">
+                        {productsOnBasket == false ?
+                            <div className="basketEmpty">
+                                <h3>Корзина пуста</h3>
+                            </div>
+                            :
+                            <Grid container item spacing={3}>
+                                {productsOnBasket?.map((product, index) => {
+                                    return (
+                                        <LikedProductCard
+                                            key={index + product.id}
+                                            product={product}
+                                            likedProductsData={likedProducts.data}
+                                            productsOnBasket={productsOnBasket}
+                                            setProductsOnBasket={setProductsOnBasket}
+                                        />
+                                    )
+                                })
+                                }
+                            </Grid>
+                        }
+                    </Grid>
+            }
         </Grid>
     )
 }

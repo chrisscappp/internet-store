@@ -25,7 +25,7 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
 
     const [showNotifications, setShowNotifications] = React.useState(false)
     const [componentNotifications, setComponentNotifications] = React.useState([])
-    const [componentLiked, setComponentLiked] = React.useState([])
+    const [likedProductsLength, setLikedProductsLength] = React.useState([])
     const handleClose = () => setShowNotifications(false);
 
     React.useEffect(() => {
@@ -33,7 +33,7 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
     }, [notifications])
 
     React.useEffect(() => {
-        setComponentLiked(likedProducts)
+        setLikedProductsLength(likedProducts)
     }, [likedProducts])
 
     const viewNotifications = () => {
@@ -45,16 +45,11 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
         setShowNotifications(false)
     }
 
-    let activeStyle = {
-        textDecoration: "underline",
-        color: "white"
-    };
-
     return (
         <>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                     <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                        <Badge badgeContent={0} color="error">
+                        <Badge badgeContent={likedProductsLength?.length} color="error">
                             <NavLink to="/basket" className="inactive" activeClassName="active">
                                 <ShoppingBasketIcon />
                             </NavLink>

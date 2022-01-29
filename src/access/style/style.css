@@ -59,3 +59,21 @@
     transition: 0.3s;
 }
 
+.clearButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clearButton{
+    border: medium none;
+    background-image: none;
+    background: transparent;
+    float: left;
+    background-color: transparent;
+}
+.basketEmpty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

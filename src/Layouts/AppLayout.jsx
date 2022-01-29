@@ -4,7 +4,6 @@ import Container from "@material-ui/core/Container";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
 import BasketPage from "./BasketPage/BasketPage";
-import {paths} from '../ReactRouter/Paths/paths'
 
 const AppLayout = () => {
     return (

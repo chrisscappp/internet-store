@@ -1,7 +1,9 @@
 import {GET_LIKEDPRODUCTS} from "../../Constants/likedProducts";
+import {SET_IS_LOADING} from "../../Constants/products";
 
 const defaultState = {
-    likedProducts: []
+    likedProducts: {},
+    isLoading: true
 }
 
 export default function likedProductsReducer (state = defaultState, action) {
@@ -11,7 +13,13 @@ export default function likedProductsReducer (state = defaultState, action) {
                 ...state,
                 likedProducts: action.payload
             }
+        case SET_IS_LOADING :
+            return {
+                ...state,
+                isLoading: action.payload
+            }
         default:
             return state
+
     }
 }

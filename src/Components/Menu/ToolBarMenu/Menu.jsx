@@ -11,7 +11,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {notification} from '../../../Redux/Actions/notificationsAction'
 import HomeIcon from "../ToolBarItems/ToolBarIcons/HomeIcon";
 
-export default function TopBarMenu({likedProducts}) {
+export default function TopBarMenu({likedProducts, value, setValue}) {
 
     const dispatch = useDispatch()
     const {notifications} = useSelector(({notificationsReducer}) => notificationsReducer)
@@ -29,7 +29,10 @@ export default function TopBarMenu({likedProducts}) {
                 <Toolbar>
                     <HomeIcon/>
                     <ToolBarHead/>
-                    <ToolBarSearch/>
+                    <ToolBarSearch
+                        value={value}
+                        setValue={setValue}
+                    />
                     <Box sx={{ flexGrow: 1 }} />
                     <ToolBarIcons
                         menuId={menuId}
