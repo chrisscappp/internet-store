@@ -11,12 +11,6 @@ import ClearIcon from '@mui/icons-material/Clear';
 import {clearOneCardFromBasket} from '../../api/delete/clearOneCard'
 
 const LikedProductCard = ({product, productsOnBasket, setProductsOnBasket}) => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
 
     const clearCardFromBasket = (id) => {
         setProductsOnBasket(productsOnBasket.filter(prod => prod.id !== id))
@@ -32,7 +26,7 @@ const LikedProductCard = ({product, productsOnBasket, setProductsOnBasket}) => {
     return (
         <>
             <Grid item xs={4} key={product.id}>
-                <Card sx={{maxWidth: 345}}>
+                <Card sx={{maxWidth: 345}} className='product-card'>
                     <CardHeader
                         action={
                             <IconButton
@@ -40,10 +34,10 @@ const LikedProductCard = ({product, productsOnBasket, setProductsOnBasket}) => {
                                 id="basic-button"
                                 aria-controls="basic-menu"
                                 aria-haspopup="true"
-                                aria-expanded={open ? 'true' : undefined}
-                                onClick={handleClick}
+                                onClick={(id) => clearCardFromBasket(product.id)}
+                                className="clear-liked-card-button"
                             >
-                                <ClearIcon onClick={(id) => clearCardFromBasket(product.id)}/>
+                                <ClearIcon style={{color: 'black'}}/>
                             </IconButton>
                         }
                         title={product.title}
@@ -56,12 +50,12 @@ const LikedProductCard = ({product, productsOnBasket, setProductsOnBasket}) => {
                         alt="img"
                     />
                     <CardContent>
-                        <Typography variant="body1" color="text.secondary" fontWeight="medium">
+                        <Typography style={{color: 'black'}} variant="body1" color="text.secondary" fontWeight="medium">
                             Цена: {product.price} $
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites" onClick={() => buyProduct(product.id)}>
+                        <IconButton style={{color: 'black'}} aria-label="add to favorites" onClick={() => buyProduct(product.id)}>
                             <div><h4>Купить</h4></div>
                         </IconButton>
                     </CardActions>

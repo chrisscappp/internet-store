@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "login": "Alex",
+      "role": "admin",
+      "token": "9Cmcwiehr8-23yrbc"
+    }
+  ],
   "products1": {
     "countPages": 3,
     "product": [
@@ -225,5 +232,46 @@
   "commentsProducts19": [],
   "commentsProducts20": [],
   "commentsProducts21": [],
-  "likedProducts": []
+  "likedProducts": [
+    {
+      "title": "New Balance",
+      "author": "Игорь Катамаранов",
+      "description": "Кроссы огонь!",
+      "price": 5000,
+      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
+      "id": 1
+    },
+    {
+      "title": "Nike",
+      "author": "VasyaBarnaul_2010",
+      "description": "Кроссы огонь!",
+      "price": 4000,
+      "image": "https://rostov-na-donu.streetfoot.ru/wp-content/uploads/2019/09/e3fbbffc3591cd2656369ad94d0c36f7.jpg",
+      "id": 2
+    },
+    {
+      "title": "New Balance",
+      "author": "Игорь Катамаранов",
+      "description": "Кроссы огонь!",
+      "price": 5000,
+      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
+      "id": 3
+    },
+    {
+      "title": "Adidas",
+      "author": "Александр Шаненков",
+      "description": "Кроссы огонь!",
+      "price": 99000,
+      "image": "https://i.pinimg.com/originals/54/d5/f3/54d5f3912fef461149a7bc05ab805df6.jpg",
+      "id": 4
+    },
+    {
+      "title": "Vans",
+      "author": "Илья Бруев",
+      "description": "Кроссы огонь!",
+      "price": 7000,
+      "image": "https://sochi.streetfoot.ru/wp-content/uploads/2020/07/vans-mario-chernye-s-belym-35-39.jpg",
+      "id": 5
+    }
+  ]
 }

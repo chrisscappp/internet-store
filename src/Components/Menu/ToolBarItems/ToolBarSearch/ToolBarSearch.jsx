@@ -10,7 +10,7 @@ const ToolBarSearch = ({value, setValue}) => {
                     <SearchIcon />
                 </SearchIconWrapper>
                 <StyledInputBase
-                    placeholder="Фирма кроссовка..."
+                    placeholder="Я ищу..."
                     inputProps={{ 'aria-label': 'search' }}
                     onChange={(event) => setValue(event.target.value)}
                 />

@@ -1,4 +1,5 @@
 import {GET_PRODUCTS, SET_IS_LOADING, SET_PAGES} from "../Constants/products";
+import {SET_IS_ERROR} from "../Constants/error"
 import {PRODUCTS} from '../../api/urls/urls'
 import {getData} from '../../api/get/getData'
 
@@ -24,6 +25,12 @@ export const setIsLoading = (value) => {
     }
 }
 
+const setIsError = () => {
+    return {
+        type: SET_IS_ERROR
+    }
+}
+
 
 export const getProducts = (pageNumber) => {
     return (dispatch) => {
@@ -35,6 +42,10 @@ export const getProducts = (pageNumber) => {
                     dispatch(setPages(response.data.countPages))
                     dispatch(setIsLoading(false))
                 }
+            })
+            .catch((err) => {
+                dispatch(setIsError())
+                dispatch(setIsLoading(false))
             })
     }
 }

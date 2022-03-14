@@ -1,9 +1,11 @@
 import {GET_PRODUCTS, SET_PAGES, SET_IS_LOADING} from "../../Constants/products";
+import {SET_IS_ERROR} from "../../Constants/error"
 
 const defaultState = {
     products: {},
     pages: 1,
-    isLoading: true
+    isLoading: true,
+    isError: false,
 }
 
 export default function productsReducer (state = defaultState, action) {
@@ -22,6 +24,11 @@ export default function productsReducer (state = defaultState, action) {
             return {
                 ...state,
                 isLoading: action.payload
+            }
+        case SET_IS_ERROR :
+            return {
+                ...state,
+                isError: !state.isError
             }
         default:
             return state

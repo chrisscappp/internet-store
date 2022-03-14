@@ -15,7 +15,7 @@ const HomeIcon = () => {
 
     return (
         <>
-
+        <NavLink to = "/" className="inactive" activeclassname="active">
                 <IconButton
                     size="large"
                     edge="start"
@@ -23,10 +23,11 @@ const HomeIcon = () => {
                     aria-label="open drawer"
                     sx={{ mr: 2 }}
                 >
-                    <NavLink to = "/" className="inactive" activeClassName="active">
+
                         <HomeIcon sx={{ fontSize: 30 }} />
-                    </NavLink>
+
                 </IconButton>
+        </NavLink>
         </>
     )
 }

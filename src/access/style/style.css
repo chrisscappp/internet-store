@@ -3,16 +3,84 @@
     align-items: center;
 }
 
-.headerMenu {
-
+.products-wrapper {
+    margin-top: 45px;
 }
 
 .products_container{
     display: none;
 }
+.likedProducts-wrapper {
+    margin-top: 50px;
+}
+.testWrapper {
+    margin-top: 90px;
+}
+/*.basket-wrapper {*/
+/*    margin-top: 20px;*/
+/*}*/
+.likedProducts-container{
+    margin-top: 50px;
+}
+.likedProducts_container {
+    display: none;
+}
+
+.product-card {
+    background-color: #ffffff !important;
+    color: black !important;
+}
+.product-card span {
+    color: black !important;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.footer-text {
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+
+.login-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container {
+    background-color: #ffffff !important;
+    color: black !important;
+    width: 600px;
+    height: 200px;
+    margin-top: 250px;
+}
+
+.login-submit-button {
+    margin-top: 15px;
+}
+
+.login-form {
+    background-image:
+            linear-gradient(-180deg, #E1E6EC 2%, #F0F4F7 96%),
+            radial-gradient(at 50% 100%, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.5) 200%);
+    height: 100vh;
+}
 
 .App {
-    background-color: #ffff7d;
+    background-color: #E1E6EC;
+    background-image:
+            linear-gradient(-180deg, #E1E6EC 2%, #F0F4F7 96%),
+            radial-gradient(at 50% 100%, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.5) 200%);
+    background-blend-mode: normal, color-burn;
+    height: auto;
+}
+.basket-wrapper {
+    height: 100vh;
 }
 
 .layouts_container {
@@ -76,4 +144,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.server-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.server-error_text {
+    letter-spacing: 0.2px;
+}
+.spinner {
+    display: flex;
+    margin-top: 100px;
+}
+.headerMenu {
+    position: fixed;
+    margin-top:20px;
+    display: block;
+    width: 100%;
+    z-index: 1;
+}
+.products-wrapper {
+    padding-top: 65px;
+}
+.likedProducts-container {
+    padding-top: 650px;
+}
+.noFindProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.noFindProduct-text {
+    letter-spacing: 0.2px;
 }

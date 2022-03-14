@@ -11,10 +11,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {notification} from '../../../Redux/Actions/notificationsAction'
 import HomeIcon from "../ToolBarItems/ToolBarIcons/HomeIcon";
 
-export default function TopBarMenu({likedProducts, value, setValue}) {
+export default function TopBarMenu({likedProducts, value, setValue, productsOnBasketLength}) {
 
     const dispatch = useDispatch()
     const {notifications} = useSelector(({notificationsReducer}) => notificationsReducer)
+    const [likedProductsValue, setLikedProductsValue] = React.useState([])
 
     React.useEffect(() => {
         dispatch(notification())
@@ -37,7 +38,7 @@ export default function TopBarMenu({likedProducts, value, setValue}) {
                     <ToolBarIcons
                         menuId={menuId}
                         notifications = {notifications}
-                        likedProducts={likedProducts}
+                        productsOnBasketLength={productsOnBasketLength}
                     />
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
