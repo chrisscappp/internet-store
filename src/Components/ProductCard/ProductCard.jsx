@@ -6,8 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MenuItem from "@material-ui/core/MenuItem";
 import CommentIcon from '@mui/icons-material/Comment';
 import Menu from "@material-ui/core/Menu";
@@ -16,7 +14,7 @@ import Grid from "@material-ui/core/Grid";
 import {COMMENTS} from "../../api/urls/urls";
 import {getData} from '../../api/get/getData'
 import {sendData} from '../../api/send/sendData'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const ProductCard = ({product}) => {
     const [showComments, setShowComments] = React.useState(false)
@@ -58,33 +56,9 @@ const ProductCard = ({product}) => {
     return (
         <>
             <Grid item xs={4} key={product.id}>
-                <Card sx={{maxWidth: 345}}>
+                <Card sx={{maxWidth: 345}} className='product-card'>
                     <CardHeader
-                        action={
-                            <IconButton
-                                aria-label="settings"
-                                id="basic-button"
-                                aria-controls="basic-menu"
-                                aria-haspopup="true"
-                                aria-expanded={open ? 'true' : undefined}
-                                onClick={handleClick}
-                            >
-                                <MoreVertIcon/>
-                                <Menu
-                                    id="basic-menu"
-                                    anchorEl={anchorEl}
-                                    open={open}
-                                    onClose={handleClose}
-                                    MenuListProps={{
-                                        'aria-labelledby': 'basic-button',
-                                    }}
-                                >
-                                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                                    <MenuItem onClick={handleClose}>Logout</MenuItem>
-                                </Menu>
-                            </IconButton>
-                        }
+                        className="productCard-header"
                         title={product.title}
                         subheader={product.author}
                     />
@@ -95,18 +69,18 @@ const ProductCard = ({product}) => {
                         alt="img"
                     />
                     <CardContent>
-                        <Typography variant="body1" color="text.secondary" fontWeight="medium">
+                        <Typography style={{color: 'black'}} variant="body1" color="text.secondary" fontWeight="medium">
                             Цена: {product.price} $
                         </Typography>
                     </CardContent>
-                    <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites" onClick={likeProduct}>
+                    <CardActions disableSpacing style={{color: 'black'}}>
+                        <IconButton style={{color: 'black'}} aria-label="add to favorites" onClick={likeProduct}>
                             {likedProduct ?
-                                <FavoriteIcon style = {{color: '#ff3d3d'}}/>
-                            :
-                                <FavoriteBorderIcon/>}
+                                <AddShoppingCartIcon style = {{color: '#ff3d3d'}}/>
+                                :
+                                <AddShoppingCartIcon/>}
                         </IconButton>
-                        <IconButton onClick={() => handleShowComments(product.id)}>
+                        <IconButton onClick={() => handleShowComments(product.id)} style={{color: 'black'}}>
                             <CommentIcon/>
                         </IconButton>
                     </CardActions>

@@ -10,7 +10,7 @@ const ToolBarHead = () => {
                 component="div"
                 sx={{ display: { xs: 'none', sm: 'block' } }}
             >
-                Store
+                Sneackers Shop
             </Typography>
         </>
     )

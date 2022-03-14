@@ -19,9 +19,11 @@ export const ProductComments = ({productId, commentsData, setCommentsData}) => {
             user_name: 'Боба',
             title: userComment
         }
-        sendComments(productId, data)
-        setCommentsData([...commentsData, data])
-        setUserComment('')
+        if (data.title !== '') {
+            sendComments(productId, data)
+            setCommentsData([...commentsData, data])
+            setUserComment('')
+        }
     }
 
     return (
@@ -29,18 +31,18 @@ export const ProductComments = ({productId, commentsData, setCommentsData}) => {
             {commentsData?.map((comment, index) => {
                 return (
                     <div key={index + comment.id}>
-                        <Accordion>
+                        <Accordion style={{backgroundColor: '#fafafa'}}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon/>}
                                 aria-controls="panel1a-content"
                                 id={index + 1}
                             >
-                                <Typography style={{display: 'flex', alignItems: 'center'}}>
+                                <Typography style={{display: 'flex', alignItems: 'center', color: 'black'}}>
                                     <AccountCircleIcon/> {comment.user_name}
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Typography>
+                                <Typography style={{color: 'black'}}>
                                     {comment.title}
                                 </Typography>
                             </AccordionDetails>
@@ -58,6 +60,7 @@ export const ProductComments = ({productId, commentsData, setCommentsData}) => {
             <div style={{display: 'flex', justifyContent: 'space-between', marginLeft: '8px', marginBottom: '8px'}}>
                 <div style={{marginBottom: '0px'}}>
                     <Input
+                        style={{color: 'black'}}
                         type="text"
                         value={userComment}
                         placeholder={placeHolderFromComment}
@@ -66,7 +69,7 @@ export const ProductComments = ({productId, commentsData, setCommentsData}) => {
                     />
                 </div>
                 <div style={{marginRight: '8px'}}>
-                    <button type="button" className="btn btn-primary" onClick={setComment}>Опубликовать</button>
+                    <button type="button" className="btn btn-primary" style={{backgroundColor: 'black'}} onClick={setComment}>Опубликовать</button>
                 </div>
             </div>
         </>

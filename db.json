@@ -1,174 +1,194 @@
 {
-  "products": [
+  "users": [
     {
-      "id": 1,
-      "title": "New Balance",
-      "author": "Игорь Катамаранов",
-      "description": "Кроссы огонь!",
-      "price": 5000,
-      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg"
-    },
-    {
-      "id": 2,
-      "title": "Nike",
-      "author": "VasyaBarnaul_2010",
-      "description": "Кроссы огонь!",
-      "price": 4000,
-      "image": "https://rostov-na-donu.streetfoot.ru/wp-content/uploads/2019/09/e3fbbffc3591cd2656369ad94d0c36f7.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Fila",
-      "author": "Артемий Татьяныч",
-      "description": "Тёма я твой фанат!",
-      "price": 1000,
-      "image": "https://media.thetab.com/blogs.dir/90/files/2018/11/sneaker-runningshoe-footwear-shoe-apparel-clothing.jpeg"
-    },
-    {
-      "id": 4,
-      "title": "Adidas",
-      "author": "Александр Шаненков",
-      "description": "Кроссы огонь!",
-      "price": 99000,
-      "image": "https://i.pinimg.com/originals/54/d5/f3/54d5f3912fef461149a7bc05ab805df6.jpg"
-    },
-    {
-      "id": 5,
-      "title": "Vans",
-      "author": "Илья Бруев",
-      "description": "Кроссы огонь!",
-      "price": 7000,
-      "image": "https://sochi.streetfoot.ru/wp-content/uploads/2020/07/vans-mario-chernye-s-belym-35-39.jpg"
-    },
-    {
-      "id": 6,
-      "title": "Asics",
-      "author": "Фёдоров Александр",
-      "description": "Кроссы огонь!",
-      "price": 8000,
-      "image": "https://cdn1.ozone.ru/s3/multimedia-h/6006020117.jpg"
-    },
-    {
-      "id": 7,
-      "title": "Reebok",
-      "author": "крот228",
-      "description": "это крутые ботинки",
-      "price": 999,
-      "image": "https://ekorobka.com.ua/image/catalog/ekorobka/krossovki%20muz/Reebok/gl6000/T2g6mYXjNbXXXXXXXX_!!889131994.jpg_400x400[1].jpg"
-    },
-    {
-      "id": 8,
-      "title": "Adidas",
-      "author": "Владимир Рощектаев",
-      "description": "Квадрат катета",
-      "price": 10000,
-      "image": "http://img04.taobaocdn.com/imgextra/i4/384661685/T2fBd4XkxdXXXXXXXX_!!384661685.jpg"
-    },
-    {
-      "id": 9,
-      "title": "Nike",
-      "author": "Виталий Сусанин",
-      "description": "Для метро самое то!",
-      "price": 800,
-      "image": "https://marshbrosok.ru/wa-data/public/shop/products/60/17/1760/images/25487/25487.970.jpg"
-    },
-    {
-      "id": 10,
-      "title": "Adidas",
-      "author": "Олег Монгол",
-      "description": "Для метро самое то!",
-      "price": 5443,
-      "image": "https://images.ru.prom.st/792047181_w640_h640_krossovki-adidas-gazelle.jpg"
-    },
-    {
-      "id": 11,
-      "title": "Fila",
-      "author": "procaves12345",
-      "description": "Хорошие кроссовки",
-      "price": 7767,
-      "image": "https://images.ru.prom.st/659996410_w640_h640_krossovki-fila-disruptor.jpg"
-    },
-    {
-      "id": 12,
-      "title": "Белорусский текстиль",
-      "author": "belorus1",
-      "description": "На огород только в них!",
-      "price": 8,
-      "image": "https://cdn.m-r-c.ru/files/shop_products_text_images/4565/imgs/1/dsc_4957-kopiya.jpg"
-    },
-    {
-      "id": 13,
-      "title": "Balenciaga",
-      "author": "pudge123",
-      "description": "Шаверма",
-      "price": 8000,
-      "image": "https://i.siteapi.org/gAqUPLRLOAtUBRF8PC6R7pBJdNA=/0x0:688x426/f65ec20791679ea.s2.siteapi.org/img/15bgvsaqac5c0k0soo0008cc0swsco"
-    },
-    {
-      "id": 14,
-      "title": "Asics",
-      "author": "Виталий Сусанин",
-      "description": "Для метро самое то!",
-      "price": 1479,
-      "image": "https://ae01.alicdn.com/kf/H692bbeb3bf4a40c2abff4c443db44cb96.jpg"
-    },
-    {
-      "id": 15,
-      "title": "Supreme",
-      "author": "Федя Летучая Мышь",
-      "description": ")))",
-      "price": 1,
-      "image": "https://krossovki-stock.ru/image/cache/catalog/%2B%2B%2B%2B%2B/%2B%2B%2B%2B%2B%2B%2B/artboard8copy9rililjutlju-228x228_0.png"
-    },
-    {
-      "id": 16,
-      "title": "Nike",
-      "author": "nike999",
-      "description": "Новые найки!",
-      "price": 7768,
-      "image": "https://images.ru.prom.st/662257505_w640_h640_krossovki-nike-free.jpg"
-    },
-    {
-      "id": 17,
-      "title": "Adidas",
-      "author": "Быстров Егор",
-      "description": "Адидас люблю!",
-      "price": 9897,
-      "image": "https://images.ru.prom.st/839066074_w200_h200_krossovki-adidas-deerupt.jpg"
-    },
-    {
-      "id": 18,
-      "title": "Текстиль из Иваново",
-      "author": "ivanovo2",
-      "description": "Лучше не найдёшь!",
-      "price": 10,
-      "image": "https://ru.all.biz/img/ru/catalog/7281875.jpeg"
-    },
-    {
-      "id": 19,
-      "title": "Nike",
-      "author": "Игорь Катамаранов",
-      "description": "Кроссовки для вас",
-      "price": 8000,
-      "image": "https://static.onlinetrade.ru/img/items/b/nike_943287_600_flex_experience_run_7_gs_dlya_devochki_tsvet_rozovyy_razmer_34_5_765002_7.jpg"
-    },
-    {
-      "id": 20,
-      "title": "Asics",
-      "author": "Илья Бруев",
-      "description": "да",
-      "price": 3444,
-      "image": "https://www.sportkult.ru/ipreview/goods/820/820/photo_8463.jpg"
-    },
-    {
-      "id": 21,
-      "title": "Puma",
-      "author": "глазычева рита",
-      "description": "puma",
-      "price": "Много",
-      "image": "https://avatars.mds.yandex.net/i?id=f3b56186a54fc81b7282a406b9dff5b1-5236398-images-thumbs&n=13"
+      "login": "Alex",
+      "role": "admin",
+      "token": "9Cmcwiehr8-23yrbc"
     }
   ],
+  "products1": {
+    "countPages": 3,
+    "product": [
+      {
+        "id": 1,
+        "title": "New Balance",
+        "author": "Игорь Катамаранов",
+        "description": "Кроссы огонь!",
+        "price": 5000,
+        "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Nike",
+        "author": "VasyaBarnaul_2010",
+        "description": "Кроссы огонь!",
+        "price": 4000,
+        "image": "https://rostov-na-donu.streetfoot.ru/wp-content/uploads/2019/09/e3fbbffc3591cd2656369ad94d0c36f7.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Fila",
+        "author": "Артемий Татьяныч",
+        "description": "Тёма я твой фанат!",
+        "price": 1000,
+        "image": "https://media.thetab.com/blogs.dir/90/files/2018/11/sneaker-runningshoe-footwear-shoe-apparel-clothing.jpeg"
+      },
+      {
+        "id": 4,
+        "title": "Adidas",
+        "author": "Александр Шаненков",
+        "description": "Кроссы огонь!",
+        "price": 99000,
+        "image": "https://i.pinimg.com/originals/54/d5/f3/54d5f3912fef461149a7bc05ab805df6.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Vans",
+        "author": "Илья Бруев",
+        "description": "Кроссы огонь!",
+        "price": 7000,
+        "image": "https://sochi.streetfoot.ru/wp-content/uploads/2020/07/vans-mario-chernye-s-belym-35-39.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Asics",
+        "author": "Фёдоров Александр",
+        "description": "Кроссы огонь!",
+        "price": 8000,
+        "image": "https://cdn1.ozone.ru/s3/multimedia-h/6006020117.jpg"
+      },
+      {
+        "id": 7,
+        "title": "Reebok",
+        "author": "крот228",
+        "description": "это крутые ботинки",
+        "price": 999,
+        "image": "https://ekorobka.com.ua/image/catalog/ekorobka/krossovki%20muz/Reebok/gl6000/T2g6mYXjNbXXXXXXXX_!!889131994.jpg_400x400[1].jpg"
+      },
+      {
+        "id": 8,
+        "title": "Adidas",
+        "author": "Владимир Рощектаев",
+        "description": "Квадрат катета",
+        "price": 10000,
+        "image": "http://img04.taobaocdn.com/imgextra/i4/384661685/T2fBd4XkxdXXXXXXXX_!!384661685.jpg"
+      },
+      {
+        "id": 9,
+        "title": "Nike",
+        "author": "Виталий Сусанин",
+        "description": "Для метро самое то!",
+        "price": 800,
+        "image": "https://marshbrosok.ru/wa-data/public/shop/products/60/17/1760/images/25487/25487.970.jpg"
+      }
+    ]
+  },
+  "products2": {
+    "countPages": 3,
+    "product": [
+      {
+        "id": 10,
+        "title": "Adidas",
+        "author": "Олег Монгол",
+        "description": "Для метро самое то!",
+        "price": 5443,
+        "image": "https://images.ru.prom.st/792047181_w640_h640_krossovki-adidas-gazelle.jpg"
+      },
+      {
+        "id": 11,
+        "title": "Fila",
+        "author": "procaves12345",
+        "description": "Хорошие кроссовки",
+        "price": 7767,
+        "image": "https://images.ru.prom.st/659996410_w640_h640_krossovki-fila-disruptor.jpg"
+      },
+      {
+        "id": 12,
+        "title": "Белорусский текстиль",
+        "author": "belorus1",
+        "description": "На огород только в них!",
+        "price": 8,
+        "image": "https://cdn.m-r-c.ru/files/shop_products_text_images/4565/imgs/1/dsc_4957-kopiya.jpg"
+      },
+      {
+        "id": 13,
+        "title": "Balenciaga",
+        "author": "pudge123",
+        "description": "Шаверма",
+        "price": 8000,
+        "image": "https://i.siteapi.org/gAqUPLRLOAtUBRF8PC6R7pBJdNA=/0x0:688x426/f65ec20791679ea.s2.siteapi.org/img/15bgvsaqac5c0k0soo0008cc0swsco"
+      },
+      {
+        "id": 14,
+        "title": "Asics",
+        "author": "Виталий Сусанин",
+        "description": "Для метро самое то!",
+        "price": 1479,
+        "image": "https://ae01.alicdn.com/kf/H692bbeb3bf4a40c2abff4c443db44cb96.jpg"
+      },
+      {
+        "id": 15,
+        "title": "Supreme",
+        "author": "Федя Летучая Мышь",
+        "description": ")))",
+        "price": 1,
+        "image": "https://krossovki-stock.ru/image/cache/catalog/%2B%2B%2B%2B%2B/%2B%2B%2B%2B%2B%2B%2B/artboard8copy9rililjutlju-228x228_0.png"
+      },
+      {
+        "id": 16,
+        "title": "Nike",
+        "author": "nike999",
+        "description": "Новые найки!",
+        "price": 7768,
+        "image": "https://images.ru.prom.st/662257505_w640_h640_krossovki-nike-free.jpg"
+      },
+      {
+        "id": 17,
+        "title": "Adidas",
+        "author": "Быстров Егор",
+        "description": "Адидас люблю!",
+        "price": 9897,
+        "image": "https://images.ru.prom.st/839066074_w200_h200_krossovki-adidas-deerupt.jpg"
+      },
+      {
+        "id": 18,
+        "title": "Текстиль из Иваново",
+        "author": "ivanovo2",
+        "description": "Лучше не найдёшь!",
+        "price": 10,
+        "image": "https://ru.all.biz/img/ru/catalog/7281875.jpeg"
+      }
+    ]
+  },
+  "products3": {
+    "countPages": 3,
+    "product": [
+      {
+        "id": 19,
+        "title": "Nike",
+        "author": "Игорь Катамаранов",
+        "description": "Кроссовки для вас",
+        "price": 8000,
+        "image": "https://static.onlinetrade.ru/img/items/b/nike_943287_600_flex_experience_run_7_gs_dlya_devochki_tsvet_rozovyy_razmer_34_5_765002_7.jpg"
+      },
+      {
+        "id": 20,
+        "title": "Asics",
+        "author": "Илья Бруев",
+        "description": "да",
+        "price": 3444,
+        "image": "https://www.sportkult.ru/ipreview/goods/820/820/photo_8463.jpg"
+      },
+      {
+        "id": 21,
+        "title": "Puma",
+        "author": "глазычева рита",
+        "description": "puma",
+        "price": "Много",
+        "image": "https://avatars.mds.yandex.net/i?id=f3b56186a54fc81b7282a406b9dff5b1-5236398-images-thumbs&n=13"
+      }
+    ]
+  },
   "notifications": [
     {
       "id": 1,
@@ -213,6 +233,45 @@
   "commentsProducts20": [],
   "commentsProducts21": [],
   "likedProducts": [
-
+    {
+      "title": "New Balance",
+      "author": "Игорь Катамаранов",
+      "description": "Кроссы огонь!",
+      "price": 5000,
+      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
+      "id": 1
+    },
+    {
+      "title": "Nike",
+      "author": "VasyaBarnaul_2010",
+      "description": "Кроссы огонь!",
+      "price": 4000,
+      "image": "https://rostov-na-donu.streetfoot.ru/wp-content/uploads/2019/09/e3fbbffc3591cd2656369ad94d0c36f7.jpg",
+      "id": 2
+    },
+    {
+      "title": "New Balance",
+      "author": "Игорь Катамаранов",
+      "description": "Кроссы огонь!",
+      "price": 5000,
+      "image": "https://newbalance.ru/upload/iblock/9ba/NB_wl574sji_3_for_web_1500x915_0027_wl574poa_14.jpg",
+      "id": 3
+    },
+    {
+      "title": "Adidas",
+      "author": "Александр Шаненков",
+      "description": "Кроссы огонь!",
+      "price": 99000,
+      "image": "https://i.pinimg.com/originals/54/d5/f3/54d5f3912fef461149a7bc05ab805df6.jpg",
+      "id": 4
+    },
+    {
+      "title": "Vans",
+      "author": "Илья Бруев",
+      "description": "Кроссы огонь!",
+      "price": 7000,
+      "image": "https://sochi.streetfoot.ru/wp-content/uploads/2020/07/vans-mario-chernye-s-belym-35-39.jpg",
+      "id": 5
+    }
   ]
 }

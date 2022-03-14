@@ -21,20 +21,16 @@ const styleForModal = {
     p: 4,
 };
 
-const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProducts}) => {
+const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, productsOnBasketLength}) => {
 
     const [showNotifications, setShowNotifications] = React.useState(false)
     const [componentNotifications, setComponentNotifications] = React.useState([])
-    const [componentLiked, setComponentLiked] = React.useState([])
+    const [likedProductsLength, setLikedProductsLength] = React.useState([])
     const handleClose = () => setShowNotifications(false);
 
     React.useEffect(() => {
         setComponentNotifications(notifications)
     }, [notifications])
-
-    React.useEffect(() => {
-        setComponentLiked(likedProducts)
-    }, [likedProducts])
 
     const viewNotifications = () => {
         setShowNotifications(!showNotifications)
@@ -45,23 +41,16 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
         setShowNotifications(false)
     }
 
-    let activeStyle = {
-        textDecoration: "underline",
-        color: "white"
-    };
-
     return (
         <>
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{display: {xs: 'none', md: 'flex'}}}>
+                <NavLink to="/basket" className="inactive" activeclassname="active">
                     <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                        <Badge badgeContent={0} color="error">
-                            <NavLink to="/basket" style={({ isActive }) =>
-                                isActive ? activeStyle : undefined
-                            }>
-                                <ShoppingBasketIcon />
-                            </NavLink>
+                        <Badge badgeContent = {productsOnBasketLength} color="error">
+                            <ShoppingBasketIcon/>
                         </Badge>
                     </IconButton>
+                </NavLink>
                 <IconButton
                     size="large"
                     aria-label="show 17 new notifications"
@@ -84,17 +73,17 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
                                         <div style={{marginTop: '5px'}}>
                                             <Typography>Уведомлений пока нет</Typography>
                                         </div>
-                                        :notifications.map((item, index) => {
-                                        return (
-                                            <div key = {index + item.title}>
-                                                <Typography id="modal-modal-description" sx={{mt: 2}}>
-                                                    {item.title}
-                                                </Typography>
-                                            </div>
-                                        )
-                                    })}
+                                        : notifications.map((item, index) => {
+                                            return (
+                                                <div key={index + item.title}>
+                                                    <Typography id="modal-modal-description" sx={{mt: 2}}>
+                                                        {item.title}
+                                                    </Typography>
+                                                </div>
+                                            )
+                                        })}
                                     {componentNotifications.length === 0 ? null
-                                    :
+                                        :
                                         <div style={{marginTop: '5px'}}>
                                             <Button variant="outlined" color="error" onClick={clearNotifications}>
                                                 Очистить уведомления
@@ -106,6 +95,7 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
                         </div>
                     </Badge>
                 </IconButton>
+                <NavLink to="/login" className="inactive" activeclassname="active">
                     <IconButton
                         size="large"
                         edge="end"
@@ -115,12 +105,9 @@ const ToolBarIcons = ({handleProfileMenuOpen, menuId, notifications, likedProduc
                         onClick={handleProfileMenuOpen}
                         color="inherit"
                     >
-                        <NavLink to = "/login" style={({isActive}) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                            <AccountCircle />
-                        </NavLink>
+                        <AccountCircle/>
                     </IconButton>
+                </NavLink>
             </Box>
         </>
     )
